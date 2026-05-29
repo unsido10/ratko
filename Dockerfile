@@ -61,14 +61,12 @@ COPY . /data/Heroku
 # --- УСТАНОВКА PYTHON ЗАВИСИМОСТЕЙ ---
 RUN pip install --no-warn-script-location --no-cache-dir -U -r requirements.txt
 
-# Информируем о порте (Render подменит его на свой внутренний автоматически)
-EXPOSE 8080
-
-# --- ЗАПУСК ВЕБ-ИНТЕРФЕЙСА ---
-# Устанавливаем flask для нашего хака
+# Устанавливаем flask для нашего «хака»
 RUN pip install flask
+
+# Указываем, что будем использовать порт, который выдаст Render
+EXPOSE 10000
 
 # Запускаем два процесса: flask-заглушку и сам бот
 CMD python3 health.py & python3 -m heroku --root
-
 
