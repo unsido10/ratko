@@ -65,5 +65,10 @@ RUN pip install --no-warn-script-location --no-cache-dir -U -r requirements.txt
 EXPOSE 8080
 
 # --- ЗАПУСК ВЕБ-ИНТЕРФЕЙСА ---
-CMD ["python3", "-m", "heroku", "--root"]
+# Устанавливаем flask для нашего хака
+RUN pip install flask
+
+# Запускаем два процесса: flask-заглушку и сам бот
+CMD python3 health.py & python3 -m heroku --root
+
 
