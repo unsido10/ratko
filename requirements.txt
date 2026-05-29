@@ -1,27 +1,65 @@
+# --- ТВОЯ ОСНОВА (НЕ ТРОГАЕМ) ---
 heroku-tl-new==2.0.0
-pyaes
+Pillow
+gitpython==3.1.2
+aiohttp==3.11.18
+python-magic
+
+# --- СИСТЕМНЫЕ И СЕТЕВЫЕ (ДЛЯ СТАБИЛЬНОСТИ) ---
+aiogram==3.28.2
+setuptools
+wheel
+certifi==2024.8.30
+python-dotenv
+requests==2.27.1
+yarl
+pydantic>=2.10.4
+pydantic-core>=2.27.2
+python-dateutil
+pyyaml
+psutil==6.0.0
+urllib3
+idna
+multidict
+async-timeout
+werkzeug==2.2.2
+ruamel.yaml==0.17.21
+aiohttp_jinja2==1.5
+Jinja2==3.0.3
 aiofile==3.8.1
 aiofiles==24.1.0
-aiogram==3.26.0
-pydantic-core>=2.27.2 
-pydantic>=2.10.4
-gitpython==3.1.2
-deep-translator
-meval==2.5
-aiohttp_jinja2==1.5
-aiohttp==3.11.18
-Jinja2==3.0.3
-requests==2.27.1
-certifi==2024.8.30
-grapheme==0.6.0
-emoji==2.1.0
-werkzeug==2.2.2
-psutil==6.0.0
-TgCrypto-pyrofork
-rsa==4.9
-ruamel.yaml==0.17.21
-bs4==0.0.2
 orjson
-Pillow
 
-# Python 3.10+
+# --- МЕДИА И МУЗЫКА (МАКСИМУМ СОВМЕСТИМОСТИ) ---
+imageio-ffmpeg
+yt-dlp
+pytube
+pydub
+tgcrypto
+TgCrypto-pyrofork
+hachoir
+mutagen
+ffmpy
+
+# --- НЕЙРОНКИ И ПОИСК ---
+google-generativeai
+openai
+g4f
+beautifulsoup4
+bs4==0.0.2
+html5lib
+soupsieve
+deep-translator
+
+# --- ВСПОМОГАТЕЛЬНЫЕ ---
+grapheme==0.6.0
+emoji==2.2.0
+qrcode
+pybase64
+cryptography
+cachetools
+speedtest-cli
+colorama
+pyaes
+meval==2.5
+rsa==4.9
