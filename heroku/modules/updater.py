@@ -170,10 +170,10 @@ class UpdaterMod(loader.Module):
             except Exception:
                 pass
 
-    @loader.loop(interval=60, autostart=True)
+        @loader.loop(interval=60, autostart=False) # autostart выключен
     async def poller(self):
-        if _is_no_git():
-            return
+        return # принудительный выход, чтобы не было никаких проверок
+
         if (
             self.config["disable_notifications"] and not self.config["autoupdate"]
         ) or not self.get_changelog():
@@ -373,7 +373,6 @@ class UpdaterMod(loader.Module):
 
         await self.process_restart_message(msg_obj)
 
-        self.db.set("Updater", "modules_count", len(self.allmodules.modules))
 
         self.set("restart_ts", time.time())
 
